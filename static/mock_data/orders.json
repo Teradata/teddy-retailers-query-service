@@ -1,0 +1,98 @@
+{
+    "orders": [
+      {
+        "customer": "customer_1",
+        "lines": [
+          {
+            "product_code": 5,
+            "product_name": "Paper Towels",
+            "quantity": 2,
+            "subtotal": 2000
+          },
+          {
+            "product_code": 10,
+            "product_name": "Hand Soap",
+            "quantity": 3,
+            "subtotal": 2400
+          },
+          {
+            "product_code": 23,
+            "product_name": "Batteries",
+            "quantity": 1,
+            "subtotal": 1000
+          },
+          {
+            "product_code": 40,
+            "product_name": "Plastic Cups",
+            "quantity": 4,
+            "subtotal": 2000
+          }
+        ]
+      },
+      {
+        "customer": "customer_2",
+        "lines": [
+          {
+            "product_code": 14,
+            "product_name": "Toothpaste",
+            "quantity": 2,
+            "subtotal": 1000
+          },
+          {
+            "product_code": 27,
+            "product_name": "Flashlights",
+            "quantity": 1,
+            "subtotal": 1000
+          },
+          {
+            "product_code": 33,
+            "product_name": "Carpet Cleaner",
+            "quantity": 2,
+            "subtotal": 3000
+          },
+          {
+            "product_code": 46,
+            "product_name": "Trash Can",
+            "quantity": 1,
+            "subtotal": 2000
+          },
+          {
+            "product_code": 48,
+            "product_name": "Broom",
+            "quantity": 1,
+            "subtotal": 1200
+          }
+        ]
+      },
+      {
+        "customer": "customer_3",
+        "lines": [
+          {
+            "product_code": 21,
+            "product_name": "Insect Repellent",
+            "quantity": 3,
+            "subtotal": 3000
+          },
+          {
+            "product_code": 39,
+            "product_name": "Paper Plates",
+            "quantity": 2,
+            "subtotal": 2000
+          },
+          {
+            "product_code": 43,
+            "product_name": "Food Storage Containers",
+            "quantity": 2,
+            "subtotal": 3000
+          },
+          {
+            "product_code": 49,
+            "product_name": "Vacuum Cleaner",
+            "quantity": 1,
+            "subtotal": 2000
+          }
+        ]
+      }
+    ]
+  }
+  
