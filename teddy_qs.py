@@ -1,10 +1,18 @@
-from flask import Flask, render_template, request, redirect, jsonify, make_response
+from flask import Flask, render_template, request, redirect, jsonify, make_response, Response
+from os import path as op
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template("index.html")
+
+@app.route("/orders", methods=["GET"])
+def get_data():
+    fileName = op.join(op.realpath(op.dirname(__file__)), 'mock_data/orders.json')
+    data = json.load(open(fileName))
+    return Response(response=json.dumps(data),status=200,mimetype='application/json')
 
 '''
 @app.route("/orders", methods=["GET"])
