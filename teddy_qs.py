@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
-    
+
 @app.route("/orders/<string:customer_id>", methods=["GET"])
 def get_data(customer_id):
     fileName = op.join(op.realpath(op.dirname(__file__)), 'mock_data/orders.json')
@@ -20,6 +20,7 @@ def get_data(customer_id):
         else:
             print("No record found")
     return Response(response=json.dumps(customer_orders),status=200,mimetype='application/json')
+
     
 @app.route("/customer_tlv/<string:customer_id>", methods=["GET"])
 def get_customer_data(customer_id):
@@ -30,4 +31,3 @@ def get_customer_data(customer_id):
 @app.route('/orders/<string:customer_id>') 
 def get_orders(customer_id):
     return f"<p>{customer_id}</p>"
-
