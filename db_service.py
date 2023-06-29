@@ -3,8 +3,6 @@ from dotenv import load_dotenv
 import base64
 import json
 import requests
-import time
-from datetime import datetime, timedelta
 
 load_dotenv()
 
@@ -33,8 +31,3 @@ def get_user_tlv(customer_id):
     response = requests.request('POST', query_endpoint, headers=headers, data=payload_json, verify=False)
     return response.json()
 
-def check_time(eval_unix_timestamp):
-  current_timestamp = time.time()
-  current_datetime = datetime.fromtimestamp(current_timestamp)
-  target_datetime = current_datetime - timedelta(days=200)
-  return current_datetime <= datetime.fromtimestamp(eval_unix_timestamp) <= target_datetime
