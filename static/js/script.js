@@ -1,9 +1,10 @@
 const load_data = () => {
-    fetch('/static/mock_data/orders.json')
+    fetch('orders')
     .then(response => response.json())
     .then(data => {
         // Now you can access the orders data
         mock_data = data;
+        // console.log(mock_data);
         // Do further processing with the data here
     })
     .catch(error => {
