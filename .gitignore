@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Compiled Python files
+*.pyc
+
+# Dependency directories
+venv/
+env/
+env.bak/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Flask-specific files
+instance/
+*.sqlite
+
+# Development server pid file
+flask.pid
+
+# User-specific files
+*.swp
+*~
