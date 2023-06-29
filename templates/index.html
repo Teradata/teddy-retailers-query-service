@@ -10,74 +10,77 @@
   <script src="/static/js/script.js"></script> 
 </head>
 
-<body style="background-color: #FAF3E7;">
+<body style="background-color: #ffffff;">
     
   <!-- START: Navbar code -->
   <!-- Contains image and dropdown -->
-    <nav class="navbar bg-light">
-        <div class="container-fluid justify-content-end">
-          <a class="navbar-brand">
-            <img src="/static/images/user.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top">
-          </a>
-            <div class="dropdown-center">
-                <button id="btnMain" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Select the name
-                </button>
-                <!--Discounts
-                10% - TLV >= 1500, last order <= 200 days old
-                05% - TLV >= 1000, last order <= 200 days old
-                No discount - the rest
-                -->
-                <ul class="dropdown-menu dropdown-menu-dark menu dropdown-menu-end" aria-labelledby="btnMain">
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('163')">Brandon Ward</button></li> <!--will have discount 10% -->
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('629')">Walter Thompson</button></li> <!--will have discount 05% -->
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('835')">Gregory Novack</button></li>  <!--No discount -->
-                </ul>
-            </div>
-          </div>
-      </nav>
+  <nav class="navbar bg-light">
+    <div class="container-fluid d-flex  align-items-center">
+      <h2>  Teddy Retailers - Your Order</h2>
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand">
+          <img src="/static/images/user.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top">
+        </a>
+        <div class="dropdown-center ms-2">
+          <button id="btnMain" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Select a Customer
+          </button>
+          <!--Discounts
+          10% - TLV >= 1500, last order <= 200 days old
+          05% - TLV >= 1000, last order <= 200 days old
+          No discount - the rest
+          -->
+          <ul class="dropdown-menu dropdown-menu-dark menu dropdown-menu-end" aria-labelledby="btnMain">
+            <li><button class="dropdown-item" type="button" onclick="process_customer_orders('163')">Brandon Ward</button></li>
+            <!--will have discount 10% -->
+            <li><button class="dropdown-item" type="button" onclick="process_customer_orders('629')">Walter Thompson</button></li>
+            <!--will have discount 05% -->
+            <li><button class="dropdown-item" type="button" onclick="process_customer_orders('835')">Gregory Novack</button></li>
+            <!--No discount -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <!-- END: Navbar code -->
   
-    <div class="container-fluid p-5 text-white text-center" style="background-color: #F27444; height: 150;">
-      <h1>Query Service Demo</h1>  
-    </div>
+  <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-5 rounded-5" style="background-color: #F27444;color: #ffffff;">
+          <h3 class="d-flex justify-content-center mt-3">Order Details</h3>
+                   
+          <!-- START: Order Details Table -->
+          <table id="orderTable" class="table mb-4" style="color: #ffffff;">
+              <thead>
+                  <tr>
+                      <th>Product Code</th>
+                      <th>Product Name</th>
+                      <th>Quantity</th>
+                      <th>Sub-total</th>
+                  </tr>
+              </thead>
+          </table>
+          <!-- END: Order Details Table -->  
+        </div>
 
-    <div class="container mt-5">
-        <div class="row">
-          <div class="col-sm-5 rounded-5" style="background-color: #F27444;color: #FAF3E7;">
-            <h3 class="d-flex justify-content-center mt-3">Order</h3>
-            <p class="d-flex justify-content-center">Order Details</p>
-            
-            <!-- START: Order Details Table -->
-            <table id="orderTable" class="table table-bordered table-hover table-sm mb-4" style="color: #FAF3E7;">
-                <thead>
-                    <tr>
-                        <th>Product Code</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Sub-total</th>
-                    </tr>
-                </thead>
-            </table>
-            <!-- END: Order Details Table -->  
+      <!-- START: Divider code -->
+        <div class="col-sm-2">
+          <div class="d-flex justify-content-center mt-2" style="height: 375px;">
+              <div class="vr" style="width: 3;"></div>
+            </div>
+      </div>
+      <!-- END: Divider code -->
+
+      <div class="col-sm-5 rounded-5" style="background-color: #F27444; color: #FAF3E7;">
+          <h3 class="d-flex justify-content-center mt-3">Totals</h3>
+      
+      <!-- START: TLV and Final amount Table -->
+          <div id="totals_detail">
+
           </div>
+      <!-- END: TLV and Final amount Table -->
 
-        <!-- START: Divider code -->
-          <div class="col-sm-2">
-            <div class="d-flex justify-content-center mt-2" style="height: 375px;">
-                <div class="vr" style="width: 3;"></div>
-              </div>
-        </div>
-        <!-- END: Divider code -->
-
-        <div class="col-sm-5 rounded-5" style="background-color: #F27444; color: #FAF3E7;">
-            <h3 class="d-flex justify-content-center mt-3">Final</h3>
-        
-        <!-- START: TLV and Final amount Table -->
-            <table id="finalTable" class = "table table-bordered table-hover table-sm mb-4 mt-5" style="color: #FAF3E7;">
-            </table>
-        <!-- END: TLV and Final amount Table -->
-
-        </div>
+      </div>
 </body>
 </html>

@@ -4,7 +4,6 @@ import base64
 import json
 import requests
 import time
-from datetime import datetime, timedelta
 
 
 load_dotenv()
@@ -38,7 +37,6 @@ def get_user_tlv(customer_id):
     return data_to_process
 
 def get_discount(tlv,unix_timestamp_last_order):
-    print(is_current_customer(unix_timestamp_last_order))
     if is_current_customer(unix_timestamp_last_order):
         if tlv >= 1500:
             return 10
@@ -51,6 +49,5 @@ def get_discount(tlv,unix_timestamp_last_order):
 
 
 def is_current_customer(eval_unix_timestamp):
-  print(type(eval_unix_timestamp))
   current_timestamp = int(time.time())
   return (current_timestamp - eval_unix_timestamp) <= 17280000
