@@ -8,11 +8,17 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/orders", methods=["GET"])
-def get_data():
+@app.route("/orders/<string:customer_id>", methods=["GET"])
+def get_data(customer_id):
     fileName = op.join(op.realpath(op.dirname(__file__)), 'mock_data/orders.json')
     data = json.load(open(fileName))
-    return Response(response=json.dumps(data),status=200,mimetype='application/json')
+    for order in data['orders']:
+        if((customer_id == order['customer'])):
+            customer_orders = order['lines']
+            break
+        else:
+            print("No record found")
+    return Response(response=json.dumps(customer_orders),status=200,mimetype='application/json')
 
 '''
 @app.route("/orders", methods=["GET"])
