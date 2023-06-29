@@ -23,10 +23,15 @@
                 <button id="btnMain" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Select the name
                 </button>
+                <!--Discounts
+                10% - TLV >= 1500, last order <= 200 days old
+                05% - TLV >= 1000, last order <= 200 days old
+                No discount - the rest
+                -->
                 <ul class="dropdown-menu dropdown-menu-dark menu dropdown-menu-end" aria-labelledby="btnMain">
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('customer_1')">John Dorsey</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('customer_2')">Ruben Hall</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="populate_customer('customer_3')">Gary Garcia</button></li>
+                    <li><button class="dropdown-item" type="button" onclick="populate_customer('163')">Brandon Ward</button></li> <!--will have discount 10% -->
+                    <li><button class="dropdown-item" type="button" onclick="populate_customer('629')">Walter Thompson</button></li> <!--will have discount 05% -->
+                    <li><button class="dropdown-item" type="button" onclick="populate_customer('835')">Gregory Novack</button></li>  <!--No discount -->
                 </ul>
             </div>
           </div>

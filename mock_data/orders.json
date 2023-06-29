@@ -1,7 +1,7 @@
 {
     "orders": [
       {
-        "customer": "customer_1",
+        "customer": "163",
         "lines": [
           {
             "product_code": 5,
@@ -30,7 +30,7 @@
         ]
       },
       {
-        "customer": "customer_2",
+        "customer": "629",
         "lines": [
           {
             "product_code": 14,
@@ -65,7 +65,7 @@
         ]
       },
       {
-        "customer": "customer_3",
+        "customer": "835",
         "lines": [
           {
             "product_code": 21,
