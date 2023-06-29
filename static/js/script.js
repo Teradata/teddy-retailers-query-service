@@ -12,7 +12,17 @@ const load_data = () => {
     });
 }
 
-const populate_customer = (customer) => {
+const get_customer_data = (customer_id) => {
+    //make request to get customer data to backend
+    console.log() //the customer data
+}
+
+const get_customer_discount = () => {
+    //make request to get customer discount to backend
+    console.log()
+}
+
+const populate_customer = (customer_id) => {
     const selected_customer_data = mock_data.orders.find((order) => {return order.customer === customer});
     const table_orders = document.querySelector("#orderTable");
     table_orders.innerHTML = "";
@@ -39,4 +49,6 @@ const populate_customer = (customer) => {
 let mock_data = "";
 load_data();
 console.log(mock_data);
+
+
 
