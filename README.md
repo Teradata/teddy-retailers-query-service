@@ -23,7 +23,7 @@ Query Service provides APIs to:
 
 <div align="center">
 
-![Architecture](/img/about_project.PNG)
+![Architecture](./img/about_project.PNG)
 
 </div>
 
