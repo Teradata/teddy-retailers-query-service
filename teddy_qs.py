@@ -27,7 +27,3 @@ def get_customer_data(customer_id):
     tlv_data = get_user_tlv(customer_id)
     response = make_response(tlv_data, 200)
     return response
-    
-@app.route('/orders/<string:customer_id>') 
-def get_orders(customer_id):
-    return f"<p>{customer_id}</p>"

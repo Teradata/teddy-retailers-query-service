@@ -1,25 +1,41 @@
 # Introduction
 
-Learn how to use Teradata Query Service to query and access the Analytics Database through REST API. 
+This project showcases the utilization of Teradata Query Service to efficiently retrieve data from a Teradata Vantage Instance within a WebApp.
 
-### Teradata Query Service
+## What is Teradata Query Service
 
-[Teradata Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Overview/Teradata-Query-Service) is a REST API for Vantage to run standard SQL statements without managing client-side drivers.<br>
-It lets developer query a Teradata-supported database from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. 
-<br>
+[Teradata Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Overview/Teradata-Query-Service) is a middleware that provides a REST API that allows the execution of standard SQL statements against a Teradata Vantage instance without managing client-side drivers.<br>
+Queries can be executed from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. <br>
 Query Service provides APIs to:
 *   Configure Teradata-supported systems
 *   Submit SQL queries and access responses
 *   Create database sessions
 *   Access database and object metadata
 
-## Prerequisites
+## Use Cases
+Query Service is a very suitable tool in cases when working with a Teradata driver is not practical or feasible.
+Examples:
+* A web or mobile application that communicates with services that expose their own APIs. 
+	* This projects illustrates this specific use case.
+* Working with Low Code tools that allow HTTP calls but not the installation of libraries.
+* Execution of SQL Queries from the browser.
+	* Teradata web-based SQL editors 
 
-- Code IDE
-- Python 3.X (https://www.python.org/downloads/)
-- ClearScape Analytics Experience Account (https://clearscape.teradata.com/register-user)
+## About the Project, Teddy Retailers Web Application
+### Context
+As mentioned, this project illustrates the first use case mentioned above. Teddy Retailers is a retailer of common household items.
+Teddy Retailers Web Application connects to services that manage it's inventory (ERP system) through an specific endpoint. A recent request has been made to introduce a new marketing strategy aimed at rewarding frequent customers through a discount program.
 
-## About Project
+A frequent customer is defined as a customer with a total lifetime value above a certain threshold and that has ordered from Teddy Retailers in the 
+last 200 days.
+
+The discount percentage varies according to Customer Lifetime Value as follows:
+- 10% to customers with a Customer Lifetime Value >= 1500 USD
+-  5% to customers with a Customer Lifetime Value < 1500 USD and >= 1000 USD
+
+A query to Teradata Data Warehouse is needed to determine the Customer Lifetime Value and the date of the most recent order placed by a specific customer. We leverage Teradata Query Service to quickly set an endpoint that will allow the execution of this query with minimum overhead.
+
+### Implementation
 
 <div align="center">
 
@@ -27,9 +43,18 @@ Query Service provides APIs to:
 
 </div>
 
-A Flask based web application that queries the Teradata database using Teradata Query Service.
+- A Flask based web application that queries the Teradata database using Teradata Query Service.
+- Order data and price information is mocked through a service that displays mocked data from a JSON file. This endpoint is queried from the frontend.
+- Mock data regarding Customer Lifetime Value is loaded to a Teradata Vantage Instance from Object Storage in Google Cloud.
+- Query Service is the base of a service to query the Teradata Vantage Instance for Customer Lifetime Value data.
 
-## Steps
+## Prerequisites
+
+- Code IDE
+- Python 3.X (https://www.python.org/downloads/)
+- ClearScape Analytics Experience Account (https://clearscape.teradata.com/register-user)
+
+## Steps for running the project
 
 ### Step 1: ClearScape Setup
 
@@ -108,17 +133,11 @@ TD_PASSWORD='DATABASE_PASSWORD' # your database pasword
 
 > Replace **HOST** and **DATABASE_PASSWORD** with your values
 
-### Step 3: Sample Data
+### Step 3: Load Mock Data to Teradata Vantage Instance
 
 The most important step is to upload the sample data to the environment.
 
-There are two ways to do this -
-1. Using a SQL client software, like [DBeaver](https://dbeaver.io/download/)
-2. With the code (Python in our case)
-
-We have incorporated the second option in the project. <br>
-
-In the freshly cloned project, you will find [`data_load.sql`](/mock_data/data_load.sql) file containing SQL query to create a database and a table.
+Run the query below in a database client properly connected to your Teradata Vantage Instance.
 
 ``` sql
 CREATE DATABASE teddy_retailers_warehouse
@@ -138,11 +157,9 @@ The `customer_tlv.csv` file has following information -
 * _tlv_
 * _last_ordered_
 
-The CSV data is used here to calculate discount for customers based on their shopping habit. <br>
+The CSV data is used here to calculate discount for customers based on their previous orders. It mocks data already ingested from relevant source systems and transformed in the Data Warehouse. <br>
 
-If you wish to check the SQL query separately, visit our [Query Service tutorial](https://quickstarts.teradata.com/query-service/send-queries-using-rest-api.html) page. <br>
-
-> There is [`orders.json`](/mock_data/orders.json) file that contains product details and acts as Transactional DB.
+> The [`orders.json`](/mock_data/orders.json) file that contains product details and serves as the basis to generate customer current order.
 
 
 ### Step 4: Python virtual environment and requirements
