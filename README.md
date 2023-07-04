@@ -6,11 +6,9 @@ This project showcases the utilization of Teradata Query Service to efficiently 
 
 [Teradata Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Overview/Teradata-Query-Service) is a middleware that provides a REST API that allows the execution of standard SQL statements against a Teradata Vantage instance without managing client-side drivers.
 
-
 Queries can be executed from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. 
 
-
-Query Service provides APIs to:
+Query Service provides APIs for:
 *   Configure Teradata-supported systems
 *   Submit SQL queries and access responses
 *   Create database sessions
@@ -25,7 +23,7 @@ Examples:
 * Execution of SQL Queries from the browser.
 	* Teradata web-based SQL editors 
 
-## About the Project, Teddy Retailers Web Application
+## About the Project - Teddy Retailers Web Application
 ### Context
 As mentioned, this project illustrates the first use case mentioned above. Teddy Retailers is a retailer of common household items.
 Teddy Retailers Web Application connects to services that manage it's inventory (ERP system) through an specific endpoint. A recent request has been made to introduce a new marketing strategy aimed at rewarding frequent customers through a discount program.
@@ -141,7 +139,7 @@ TD_PASSWORD='DATABASE_PASSWORD' # your database pasword
 
 The most important step is to upload the sample data to the environment.
 
-Run the query below in a database client properly connected to your Teradata Vantage Instance.
+Run the query below in a database client properly connected to your Teradata Vantage instance.
 
 ``` sql
 CREATE DATABASE teddy_retailers_warehouse
