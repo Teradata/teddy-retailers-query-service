@@ -164,7 +164,7 @@ The `customer_tlv.csv` file has following information -
 
 The CSV data is used here to calculate discount for customers based on their previous orders. It mocks data already ingested from relevant source systems and transformed in the Data Warehouse. <br>
 
-> The [`orders.json`](/mock_data/orders.json) file that contains product details and serves as the basis to generate customer current order.
+> The [`orders.json`](/mock_data/orders.json) file contains product details and serves as the basis to generate customer current order.
 
 
 ### Step 4: Python virtual environment and requirements
