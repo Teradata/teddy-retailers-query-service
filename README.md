@@ -4,8 +4,12 @@ This project showcases the utilization of Teradata Query Service to efficiently 
 
 ## What is Teradata Query Service
 
-[Teradata Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Overview/Teradata-Query-Service) is a middleware that provides a REST API that allows the execution of standard SQL statements against a Teradata Vantage instance without managing client-side drivers.<br>
-Queries can be executed from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. <br>
+[Teradata Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Overview/Teradata-Query-Service) is a middleware that provides a REST API that allows the execution of standard SQL statements against a Teradata Vantage instance without managing client-side drivers.
+
+
+Queries can be executed from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. 
+
+
 Query Service provides APIs to:
 *   Configure Teradata-supported systems
 *   Submit SQL queries and access responses
@@ -13,7 +17,7 @@ Query Service provides APIs to:
 *   Access database and object metadata
 
 ## Use Cases
-Query Service is a very suitable tool in cases when working with a Teradata driver is not practical or feasible.
+Query Service is a suitable tool in cases when working with a Teradata driver is not practical or feasible.
 Examples:
 * A web or mobile application that communicates with services that expose their own APIs. 
 	* This projects illustrates this specific use case.
