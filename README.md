@@ -9,13 +9,16 @@ This project showcases the utilization of Teradata Query Service to efficiently 
 Queries can be executed from web pages, mobile devices, or scripting language using HTTP as the wire protocol and JSON as the data interchange format. 
 
 Query Service provides APIs for:
+
 *   Configure Teradata-supported systems
 *   Submit SQL queries and access responses
 *   Create database sessions
 *   Access database and object metadata
 
 ## Use Cases
+
 Query Service is a suitable tool in cases when working with a Teradata driver is not practical or feasible.
+
 Examples:
 * A web or mobile application that communicates with services that expose their own APIs. 
 	* This projects illustrates this specific use case.
