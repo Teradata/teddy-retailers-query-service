@@ -56,8 +56,8 @@ A query to Teradata Data Warehouse is needed to determine the Customer Lifetime 
 ## Prerequisites
 
 - Code IDE
-- Python 3.X (https://www.python.org/downloads/)
-- ClearScape Analytics Experience Account (https://clearscape.teradata.com/sign-in?utm_source=developer_website&utm_medium=github_repository&utm_campaign=query-service)
+- [Python 3.7 minimum] (https://www.python.org/downloads/)
+- [ClearScape Analytics Experience Account] (https://clearscape.teradata.com/sign-in?utm_source=developer_website&utm_medium=github_repository&utm_campaign=query-service)
 
 ## Steps for running the project
 
