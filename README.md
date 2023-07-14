@@ -133,7 +133,7 @@ Your .env file will look like this -
 # Environment Values
 TD_HOST='HOST' # Host URL
 TD_USER='demo_user' # default user name
-TD_PASSWORD='DATABASE_PASSWORD' # your database pasword
+TD_PASSWORD='DATABASE_PASSWORD' # your database password
 ```
 
 > Replace **HOST** and **DATABASE_PASSWORD** with your values
