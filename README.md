@@ -147,7 +147,7 @@ Run the query below in a database client properly connected to your Teradata Van
 ``` sql
 CREATE DATABASE teddy_retailers_warehouse
 AS PERMANENT = 110e6;
-CREATE TABLE teddy_retailers_warehouse.customers_tvl AS
+CREATE TABLE teddy_retailers_warehouse.customers_tlv AS
 	(
 		SELECT CAST(customer_id as CHAR(5)) as customer_id, email, bought_items, tlv, last_ordered  FROM 
 		(
